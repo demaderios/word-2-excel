@@ -6,4 +6,5 @@ To use
 
 - From a command line in the root of this project
   - `npm install mammoth xlsx jsdom`
-  - `node word-2-excel.js`
+  - `node word-2-excel.js` OR
+  - `node word-2-json.js`
