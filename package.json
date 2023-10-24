@@ -1,0 +1,17 @@
+{
+  "name": "word-2-excel",
+  "version": "0.0.1-beta",
+  "description": "This converts a Word document with tables, into an Excel spreadsheet xlsx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excel",
+    "word",
+    "docx",
+    "xlsx"
+  ],
+  "author": "Greg DeMaderios",
+  "license": "ISC"
+}
