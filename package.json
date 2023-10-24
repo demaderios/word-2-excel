@@ -13,5 +13,10 @@
     "xlsx"
   ],
   "author": "Greg DeMaderios",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^22.1.0",
+    "mammoth": "^1.6.0",
+    "xlsx": "^0.18.5"
+  }
 }
