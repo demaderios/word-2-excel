@@ -1,5 +1,4 @@
 const mammoth = require('mammoth');
-const XLSX = require('xlsx');
 const { JSDOM } = require('jsdom');
 const fs = require('fs');
 
@@ -11,7 +10,7 @@ async function convertWordTablesToJson(inputDoc, outputJson) {
 
     //* Use JSDOM to extract tables from the html created above
     const tables = extractTablesFromHtml(result.value);
-    console.log("🚀 ~ file: word-2-json.js:14 ~ convertWordTablesToJson ~ tables:", tables)
+    // console.log("🚀 ~ file: word-2-json.js:14 ~ convertWordTablesToJson ~ tables:", tables)
 
     //* new translations object
     const translations = {};
@@ -20,14 +19,15 @@ async function convertWordTablesToJson(inputDoc, outputJson) {
       table.forEach((row) => {
         if (row.length >= 2) {
           const key = row[0].trim();
-          console.log("🚀 ~ file: word-2-json.js:23 ~ table.forEach ~ key:", key)
+          //console.log("🚀 ~ file: word-2-json.js:23 ~ table.forEach ~ key:", key)
           const value = row[1].trim();
-          console.log("🚀 ~ file: word-2-json.js:25 ~ table.forEach ~ value:", value)
+          //console.log("🚀 ~ file: word-2-json.js:25 ~ table.forEach ~ value:", value)
           translations[key] = value;
         }
       });
     });
 
+    //* Write output to translation.json file
     fs.writeFileSync(outputJson, JSON.stringify(translations, null, 2));
     console.log('Success!');
 
@@ -73,4 +73,4 @@ const inputPath = 'example.docx';
 const outputPath = 'translation.json';
 
 convertWordTablesToJson(inputPath, outputPath);
-//! Run this from command line using `node word-2-excel.js`
+//! Run this from command line using `node word-2-json.js`
